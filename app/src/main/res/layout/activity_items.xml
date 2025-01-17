@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#959595"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:textColor="@color/black"
+
+        android:textColorHint="@color/white"
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        android:id="@+id/etId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+
+        android:inputType="phone"/>
+
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        android:id="@+id/etMajor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Major"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        android:id="@+id/etCourceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cource Name"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#03A9F4"
+        android:text="Save"
+
+
+        android:textAlignment="center" />
+
+
+    <Button
+        android:id="@+id/btnSelectAll"
+
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#03A9F4"
+        android:text="All Student"
+        android:textAlignment="center"
+        android:textColorHighlight="#2196F3" />
+
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="267dp"
+
+
+        android:src="@drawable/unn"
+
+
+        />
+
+    <ImageButton
+        android:id="@+id/btnexit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="75dp"
+        android:src="@drawable/partielback"
+        android:background="#959595"
+
+
+        >
+
+    </ImageButton>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<changelist name="Changes" date="1737110811019" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" />
+  <option name="DESCRIPTION" value="Changes" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="gradle/wrapper/gradle-wrapper.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/gradle-wrapper.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-hdpi/ic_launcher.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-mdpi/ic_launcher.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher1.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xhdpi/ic_launcher.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher2.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher3.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher4.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/ic_launcher-playstore.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher-playstore.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_foreground.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_foreground1.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_foreground2.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_foreground3.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_foreground4.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_round.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_round1.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_round2.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_round3.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/ic_launcher_round4.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/iull.jpeg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/iull.jpeg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/lbluni.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/lbluni.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/logoutt.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/logoutt.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/partielback.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/partielback.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/univ1.jpeg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/univ1.jpeg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/unn.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/unn.jpg" />
+  </binary>
+</changelist>
