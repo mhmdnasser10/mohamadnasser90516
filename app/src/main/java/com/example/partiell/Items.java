@@ -1,119 +1,181 @@
 package com.example.partiell;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Items extends AppCompatActivity {
 
-
-    Button btnsave,btnSelectAll;
-    EditText etId, etName,etmajor,etCourceName;
-    SQLiteDatabase myDb;
+    Button btnSave, btnUpdate, btnDelete;
+    EditText etId, etName, etMajor, etCourseName;
     ImageButton exit;
 
+    DatabaseReference databaseReference;
 
-
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
 
 
-        btnsave = findViewById(R.id.btnsave);
+        btnSave = findViewById(R.id.btnsave);
 
-        btnSelectAll = findViewById(R.id.btnSelectAll);
-
+        btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
         etId = findViewById(R.id.etId);
         etName = findViewById(R.id.etName);
-        etmajor = findViewById(R.id.etMajor);
-        etCourceName= findViewById(R.id.etCourceName);
-        exit=findViewById(R.id.btnexit);
+        etMajor = findViewById(R.id.etMajor);
+        etCourseName = findViewById(R.id.etCourceName);
+        exit = findViewById(R.id.btnexit);
 
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("students");
+
+        exit.setOnClickListener(v -> finish());
+
+//save lal student
+        btnSave.setOnClickListener(v -> {
+            String id = etId.getText().toString().trim();
+            String name = etName.getText().toString().trim();
+            String major = etMajor.getText().toString().trim();
+            String courseName = etCourseName.getText().toString().trim();
+
+            if (id.isEmpty() || name.isEmpty() || major.isEmpty() || courseName.isEmpty()) {
+                Toast.makeText(Items.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                return;
             }
-        });
 
-        myDb = openOrCreateDatabase("productsDb", Context.MODE_PRIVATE, null);
-        myDb.execSQL("CREATE TABLE IF NOT EXISTS products(id int, name varchar, major varchar, CourceName varchar)");
+            databaseReference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        Toast.makeText(Items.this, "ID already exists", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Map<String, Object> setStudent = new HashMap<>();
 
-        btnsave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Cursor c=myDb.rawQuery("SELECT * FROM products WHERE id='"+ etId.getText()+"'",null);
-                if (c.getCount()>0){
-                    Toast.makeText(Items.this, "ID already exists", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                        setStudent.put("Name", name);
+                        setStudent.put("Major", major);
+                        setStudent.put("Course", courseName);
 
-                myDb.execSQL("INSERT INTO products VALUES('"+ etId.getText()+"','"+ etName.getText()+"','"+ etmajor.getText()+"','"+ etCourceName.getText()+"')");
-//                Toast.makeText(MainActivity.this, "Item Inserted Successfully", Toast.LENGTH_SHORT).show();
-                showmessage("Inserting", "Inserted Successfully",2);
-            }
-        });
+                        databaseReference.child(id).setValue(setStudent);
 
-
-
-        btnSelectAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Cursor c=myDb.rawQuery("SELECT * FROM products ",null);
-                if (c.getCount()>0){
-                    StringBuffer b = new StringBuffer();
-                    while (c.moveToNext()){
-                        b.append("ID: "+c.getString(0));
-                        b.append("\nName: "+c.getString(1));
-                        b.append("\nMajor: "+c.getString(2));
-                        b.append("\nCource Name: "+c.getString(3));
-                        b.append("\n ||||||||||||||||||||||||\n\n");
-                        b.append("\n ------------------------\n\n");
-
-                        b.append("\n ||||||||||||||||||||||||\n\n");
+                                        showmessage("Added", "Student Added",1);
 
                     }
-                    showmessage("All Student :", b.toString(),1);
-                    return;
                 }
-                Toast.makeText(Items.this, "No Student exists", Toast.LENGTH_SHORT).show();
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(Items.this, "Database Error: "
+                            + error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         });
 
-    }
+//delete lal student
+        btnDelete.setOnClickListener(v -> {
+            String id = etId.getText().toString().trim();
+            if (id.isEmpty()) {
+                Toast.makeText(Items.this, "Enter ID to delete", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-    public void showmessage (String title, String message, int flag) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        if (flag == 1) {
-            builder.setIcon(android.R.drawable.editbox_background);
+            databaseReference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                   if (snapshot.exists()) {
+                        databaseReference.child(id).removeValue();
+                       showmessage("Deleted", "Student Deleted",3);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(Items.this, "Error: " +
+                            error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
+
+
+//update lal student
+        btnUpdate.setOnClickListener(v -> {
+
+            String id = etId.getText().toString().trim();
+            String name = etName.getText().toString().trim();
+            String major = etMajor.getText().toString().trim();
+            String courseName = etCourseName.getText().toString().trim();
+
+            if (id.isEmpty() || name.isEmpty() || major.isEmpty() || courseName.isEmpty()) {
+                Toast.makeText(Items.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            databaseReference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+
+                        Map<String, Object> updatedStudent = new HashMap<>();
+
+                        updatedStudent.put("Name", name);
+                        updatedStudent.put("Major", major);
+                        updatedStudent.put("Course", courseName);
+
+                        databaseReference.child(id).updateChildren(updatedStudent);
+                        showmessage("Updated", "Student Updated",2);
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(Items.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
+
+
+    }
+//t3ref lal msg kef bada tbyn
+    public void showmessage (String title, String message, int flag){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        if (flag == 1){
+            builder.setIcon(android.R.drawable.checkbox_on_background);
         }
-        if (flag == 2) {
-            builder.setIcon(android.R.drawable.alert_light_frame);
+        if (flag == 2){
+            builder.setIcon(android.R.drawable.ic_menu_manage);
+
+        }
+        if (flag == 3){
+            builder.setIcon(android.R.drawable.ic_delete);
 
         }
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
-    }}
+    }
+
+
+}
+
 
 
 

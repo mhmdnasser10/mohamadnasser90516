@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="faculties">
-    <item>Select Faculty</item>
-    <item>Engineering</item>
-    <item>Science</item>
-    <item>Arts</item>
-</string-array>
+        <item>Select Faculty</item>
+        <item>Engineering</item>
+        <item>Science</item>
+        <item>Arts</item>
+    </string-array>
     <string-array name="majors_arts">
-    <item>Select Major</item>
-    <item>Philosophy</item>
-    <item>Literature</item>
-    <item>History</item>
-</string-array>
+        <item>Select Major</item>
+        <item>Philosophy</item>
+        <item>Literature</item>
+        <item>History</item>
+    </string-array>
     <string-array name="majors_default">
-    <item>Select Major</item>
-</string-array>
+        <item>Select Major</item>
+    </string-array>
     <string-array name="majors_engineering">
-    <item>Select Major</item>
-    <item>Civil Engineering</item>
-    <item>Mechanical Engineering</item>
-    <item>Electrical Engineering</item>
-</string-array>
+        <item>Select Major</item>
+        <item>Civil Engineering</item>
+        <item>Mechanical Engineering</item>
+        <item>Electrical Engineering</item>
+    </string-array>
     <string-array name="majors_science">
-    <item>Select Major</item>
-    <item>Physics</item>
-    <item>Chemistry</item>
-    <item>Biology</item>
-</string-array>
+        <item>Select Major</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Biology</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Partiell</string>
+    <string name="gcm_defaultSenderId" translatable="false">23579970923</string>
+    <string name="google_api_key" translatable="false">AIzaSyCxrv5sFo_wRo6hwyk5Hd5w8IdeG6AKo3Y</string>
+    <string name="google_app_id" translatable="false">1:23579970923:android:ee671f509835d983f0d02e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCxrv5sFo_wRo6hwyk5Hd5w8IdeG6AKo3Y</string>
+    <string name="google_storage_bucket" translatable="false">final-43c13.firebasestorage.app</string>
+    <string name="project_id" translatable="false">final-43c13</string>
     <string name="select_faculty">Select Faculty</string>
     <style name="Base.Theme.Partiell" parent="Theme.Material3.DayNight.NoActionBar">
         

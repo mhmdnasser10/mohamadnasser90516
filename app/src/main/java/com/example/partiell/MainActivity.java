@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnfac= findViewById(R.id.btnfac);
         Button btnStudent = findViewById(R.id.btnstudent);
+        Button btnallstudent=findViewById(R.id.btnallstudent);
         ImageButton exit;
 
         exit=findViewById(R.id.btnexit);
@@ -43,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, Items.class);
+                startActivity(intent);
+            }
+        });
+
+        btnallstudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, AllStudent.class);
                 startActivity(intent);
             }
         });

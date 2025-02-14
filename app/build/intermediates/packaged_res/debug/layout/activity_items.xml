@@ -61,18 +61,29 @@
 
 
         android:textAlignment="center" />
+<Button
+    android:id="@+id/btnUpdate"
 
+    android:layout_width="329dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:backgroundTint="#03A9F4"
+    android:text="Update Student"
+    android:textAlignment="center"
+    android:textColorHighlight="#2196F3" />
 
     <Button
-        android:id="@+id/btnSelectAll"
+        android:id="@+id/btnDelete"
 
         android:layout_width="329dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#03A9F4"
-        android:text="All Item"
+        android:text="Delete Student"
         android:textAlignment="center"
         android:textColorHighlight="#2196F3" />
+
+
 
     <ImageView
 
@@ -88,11 +99,11 @@
     <ImageButton
         android:id="@+id/btnexit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
 
-        android:layout_marginTop="75dp"
-        android:src="@drawable/partielback"
+        android:layout_marginTop="30dp"
         android:background="#959595"
+        android:src="@drawable/partielback"
 
 
         >
